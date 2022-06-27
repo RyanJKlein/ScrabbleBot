@@ -53,16 +53,16 @@ BOARD_SCORES = [
 
 def next_spot(cord, horizontal):
     if horizontal:
-        return cord[0]+1, cord[1]
-    else:
         return cord[0], cord[1]+1
+    else:
+        return cord[0]+1, cord[1]
 
 
 def last_spot(cord, horizontal):
     if horizontal:
-        return cord[0]-1, cord[1]
-    else:
         return cord[0], cord[1]-1
+    else:
+        return cord[0]-1, cord[1]
 
 
 def calc_word_score(letters_dict):
@@ -89,18 +89,27 @@ def calc_word_score(letters_dict):
 
 
 class ScrabbleBoard:
-    def __init__(self, log_file='scrabble_log.txt'):
-        # Initialize board
-        one_row = [None for x in range(BOARD_SIDE_LEN)]
-        self.letter_placements = [one_row for x in range(BOARD_SIDE_LEN)]
-        # FIXME name uniquely so we don't overwrite
-        self.board_file = open(log_file, 'w')
+    def __init__(self, board_file='scrabble_board.txt', load=False):
+        self.letter_placements = []
+        self.file_name = board_file
+        # If not loading from file, create new board
+        if not load:
+            for row in range(BOARD_SIDE_LEN):
+                self.letter_placements.append([])
+                for col in range(BOARD_SIDE_LEN):
+                    self.letter_placements[row].append('_')
+        else:
+            with open(board_file, 'r') as in_file:
+                lines = in_file.readlines()
+                for line in lines:
+                        self.letter_placements.append(line.strip().split(','))
+            self.__save_board()
 
     def __spot_empty(self, cord):
         if cord[0] < 0 or cord[0] > 14 or cord[1] < 0 or cord[1] > 14:
             return True
         else:
-            return self.letter_placements[cord[0]][cord[1]] is None
+            return self.letter_placements[cord[0]][cord[1]] == '_'
 
     def __get_letter(self, cord):
         return self.letter_placements[cord[0]][cord[1]]
@@ -124,19 +133,25 @@ class ScrabbleBoard:
                 played = False
             else:
                 played = True
-                # RECURSIVE STEP - find other words made if adjacent tiles are non-empty
+                # Get other words made
                 # Go to the top of the word
                 cord_candidate = cord
-                while not self.__spot_empty(cord_candidate):
+                first_tile = True
+                while not self.__spot_empty(cord_candidate) or first_tile:
                     cord_candidate = last_spot(cord_candidate, not horizontal)
+                    first_tile = False
                 cord_candidate = next_spot(cord_candidate, not horizontal) # Move back to start of word
                 # Go down until we reach an empty spot
                 new_word_made = []
-                while not self.__spot_empty(cord_candidate):
-                    letter = self.__get_letter(cord_candidate)
+                while not self.__spot_empty(cord_candidate) or cord_candidate == cord:
+                    if cord_candidate == cord:
+                        letter = word[idx]
+                    else:
+                        letter = self.__get_letter(cord_candidate)
                     letter_to_add = {
-                        'LETTER': letter if letter else word[x], # Add letter on board if there, if not add played letter
-                        'PLAYED': False if letter else True,
+                        # FIXME resolve this part, word[x] is wrong
+                        'LETTER': letter, # Add letter on board if there, if not add played letter
+                        'PLAYED': True if cord_candidate == cord else False,
                         'POSITION': cord_candidate
                     }
                     new_word_made.append(letter_to_add)
@@ -169,7 +184,7 @@ class ScrabbleBoard:
     #         'POSITION': (1, 0),
     #     }]
 
-    def add_to_board(self, word, position: tuple, horizontal):
+    def play_word(self, word, position: tuple, horizontal):
         """
 
         :param word: word to play
@@ -177,11 +192,19 @@ class ScrabbleBoard:
         :param horizontal: True for horizontal
         :return: tuple (points scored, new letters)
         """
-        # Verify board spot is not taken, and figure out special spots
+        # Retrieve words made in this turn
         words_made = self.__get_played_words(word, position, horizontal)
+        # Calculate points for turn
         points = 0
         for word in words_made:
             points += calc_word_score(word)
+        # Add word to board - only do "base" word since that must include all tiles placed
+        for letter_data in words_made[-1]:
+            cord = letter_data['POSITION']
+            letter = letter_data['LETTER']
+            if self.__spot_empty(cord):
+                self.place_tile(letter, cord)
+        # Write board to file
         self.__save_board()
         return points
 
@@ -190,6 +213,8 @@ class ScrabbleBoard:
         Saves the board to the log file
         :return:
         """
+        # Close then re-open file in 'w' to clear it
+        self.board_file = open(self.file_name, 'w')
         as_str = ""
         for row in self.letter_placements:
             for letter in row:
@@ -199,9 +224,15 @@ class ScrabbleBoard:
                     as_str += letter + ","
             as_str = as_str[:-1] + '\n'
         self.board_file.write(as_str)
+        self.board_file.close()
+
+    def place_tile(self, letter, cord):
+        x = cord[0]
+        y = cord[1]
+        self.letter_placements[x][y] = letter
 
     def __del__(self):
-        self.board_file.close()
+        print("Game over")
 
 
 
