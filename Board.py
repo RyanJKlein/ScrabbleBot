@@ -161,7 +161,7 @@ class ScrabbleBoard:
                     words_made.append(new_word_made)
 
             letter_to_add = {
-                'LETTER': word[idx],
+                'LETTER': word[idx] if played else self.__get_letter(cord),
                 'PLAYED': played,
                 'POSITION': cord,
             }
@@ -230,6 +230,27 @@ class ScrabbleBoard:
         x = cord[0]
         y = cord[1]
         self.letter_placements[x][y] = letter
+
+    def empty(self):
+        return self.__get_letter((7,7)) == '_'
+
+    def get_candidate_words(self, word, position, horizontal):
+        words_list = self.__get_played_words(word, position, horizontal)
+        words_made = []
+        for word_data in words_list:
+            candidate_word = ""
+            for letter_data in word_data:
+                candidate_word += letter_data['LETTER']
+            words_made.append(candidate_word)
+        return words_made
+
+    def word_overlaps(self, word, position, horizontal):
+        cord = position
+        for letter in word:
+            if not self.__spot_empty(cord):
+                return True
+            cord = next_spot(cord, horizontal)
+        return False
 
     def __del__(self):
         print("Game over")
