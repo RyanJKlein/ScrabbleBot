@@ -62,14 +62,27 @@ class ScrabbleGame:
         if self.sim_bag:
             for char in word:
                 self.players[name]['TILES'].remove(char)
+            game_over = False
             if len(self.bag) < len(word):
                 self.players[name]['TILES'].extend(self.bag)
                 self.bag = []
-            else:
+            elif len(self.get_tiles(name)) > 0:
                 self.players[name]['TILES'].extend(self.bag[:len(word)])
                 self.bag = self.bag[len(word):]
+            else:
+                game_over = True
         self.__update_log(f'{name} plays {word} at {position} for {points} points\n')
+        if self.sim_bag and game_over:
+            self.__update_log(f'**********************************************\n')
+            self.__update_log(f'\nGAME OVER. FINAL SCORE:\n')
+            for player in self.players:
+                name = self.players[player]['NAME']
+                points = self.players[player]['POINTS']
+                self.__update_log(f'{name}: {points}\n')
+            self.__update_log(f'**********************************************\n')
+
         self.__log_score()
+        return points
 
     def set_tiles(self, name, tiles):
         self.players[name]['TILES'] = tiles
@@ -87,5 +100,18 @@ class ScrabbleGame:
 
     def __del__(self):
         self.log_file.close()
+
+    def trade_all_tiles(self, name):
+        old_tiles = self.players[name]['TILES']
+        if len(self.bag) > 0:
+            if len(self.bag) < 7:
+                traded_tiles = old_tiles[:len(self.bag)]
+                self.players[name]['TILES'] = self.players[name]['TILES'][:len(self.bag)]
+                self.players[name]['TILES'].extend(self.bag)
+                self.bag = traded_tiles
+            else:
+                self.players[name]['TILES'] = self.bag[:7]
+                self.bag = self.bag[7:]
+                self.bag.extend(old_tiles)
 
 

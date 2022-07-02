@@ -47,9 +47,8 @@ def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
                                 return word, position, horizontal
                 # No horizontal words worked, try vertical
     # Dirty, clean up
-    if not word:
-        raise ValueError("No valid turn found!")
-    return word, position, horizontal
+    return None, None, None
+
 
 def valid_words(word_list):
     if len(word_list) < 2:
@@ -60,14 +59,14 @@ def valid_words(word_list):
                 return False
     return True
 
-def play_game(player1_bot, player2_bot):
+def play_game(player1_bot, player2_bot, dictionary='scrabble_dictionary.txt'):
     global word_dictionary
     game = Game.ScrabbleGame(log_file_name='game_simulation.txt', sdata_name='game_simulation_data.txt',
                                   sim_bag=True)
     game.add_player('Player1')
     game.add_player('Player2')
 
-    with open('Collins Scrabble Words (2019).txt', 'r') as file_dict:
+    with open(dictionary, 'r') as file_dict:
         word_dictionary = []
         lines = file_dict.readlines()
         for line in lines:
@@ -75,11 +74,18 @@ def play_game(player1_bot, player2_bot):
     print("Loaded dictionary")
 
     player_up = 'Player1'
-    while len(game.get_tiles('Player1')) > 0 and len(game.get_tiles('Player2')) > 0:
+    consec_trades = 0
+    while len(game.get_tiles('Player1')) > 0 and len(game.get_tiles('Player2')) > 0 and consec_trades < 6:
         bot = player1_bot if player_up == 'Player1' else player2_bot
         word, position, horizontal = bot(game.get_tiles(player_up), game.board)
-        game.take_turn(player_up, word, position, horizontal)
-        print(f'{player_up} played {word}')
+        if word:
+            points = game.take_turn(player_up, word, position, horizontal)
+            print(f'{player_up} played {word} for {points} points')
+            consec_trades = 0
+        else:
+            game.trade_all_tiles(player_up)
+            print(f'{player_up} trades in all letters')
+            consec_trades += 1
         player_up = 'Player1' if player_up == 'Player2' else 'Player2'
     # GAME OVER
     print("Game complete!")

@@ -53,16 +53,28 @@ BOARD_SCORES = [
 
 def next_spot(cord, horizontal):
     if horizontal:
-        return cord[0], cord[1]+1
+        if cord[1] + 1 >= BOARD_SIDE_LEN:
+            return None
+        else:
+            return cord[0], cord[1]+1
     else:
-        return cord[0]+1, cord[1]
+        if cord[0] + 1 >= BOARD_SIDE_LEN:
+            return None
+        else:
+            return cord[0]+1, cord[1]
 
 
 def last_spot(cord, horizontal):
     if horizontal:
-        return cord[0], cord[1]-1
+        if cord[1] - 1 < 0:
+            return None
+        else:
+            return cord[0], cord[1]-1
     else:
-        return cord[0]-1, cord[1]
+        if cord[0] - 1 < 0:
+            return None
+        else:
+            return cord[0]-1, cord[1]
 
 
 def calc_word_score(letters_dict):
@@ -106,6 +118,8 @@ class ScrabbleBoard:
             self.__save_board()
 
     def __spot_empty(self, cord):
+        if not cord:
+            return False
         if cord[0] < 0 or cord[0] > 14 or cord[1] < 0 or cord[1] > 14:
             return True
         else:
@@ -126,8 +140,9 @@ class ScrabbleBoard:
         words_made = []
         base_made = []
         cord = position
-        idx = 0
-        while (not self.__spot_empty(cord)) or idx < len(word):
+        played_idx = 0
+        word = self.get_prefixed_word(word, position, horizontal)
+        while (not self.__spot_empty(cord)) or played_idx < len(word):
             # Letter was already on the board
             if not self.__spot_empty(cord):
                 played = False
@@ -137,37 +152,41 @@ class ScrabbleBoard:
                 # Go to the top of the word
                 cord_candidate = cord
                 first_tile = True
-                while not self.__spot_empty(cord_candidate) or first_tile:
+                while first_tile or (cord_candidate and not self.__spot_empty(cord_candidate)):
+                    last_valid_cord = cord_candidate
                     cord_candidate = last_spot(cord_candidate, not horizontal)
                     first_tile = False
-                cord_candidate = next_spot(cord_candidate, not horizontal) # Move back to start of word
+                cord_candidate = last_valid_cord
                 # Go down until we reach an empty spot
                 new_word_made = []
-                while not self.__spot_empty(cord_candidate) or cord_candidate == cord:
+                while cord_candidate and (not self.__spot_empty(cord_candidate) or cord_candidate == cord):
                     if cord_candidate == cord:
-                        letter = word[idx]
+                        letter = word[played_idx]
                     else:
                         letter = self.__get_letter(cord_candidate)
                     letter_to_add = {
-                        # FIXME resolve this part, word[x] is wrong
                         'LETTER': letter, # Add letter on board if there, if not add played letter
                         'PLAYED': True if cord_candidate == cord else False,
                         'POSITION': cord_candidate
                     }
                     new_word_made.append(letter_to_add)
                     cord_candidate = next_spot(cord_candidate, not horizontal)
+                    last = cord_candidate
                 # Check if an actual word was made
                 if len(new_word_made) > 1:
                     words_made.append(new_word_made)
+                played_idx += 1
 
             letter_to_add = {
-                'LETTER': word[idx] if played else self.__get_letter(cord),
+                # FIXME minus 1 since we inc'd in loop
+                'LETTER': word[played_idx-1] if played else self.__get_letter(cord),
                 'PLAYED': played,
                 'POSITION': cord,
             }
             base_made.append(letter_to_add)
             cord = next_spot(cord, horizontal)
-            idx += 1
+            if not cord:
+                break
         words_made.append(base_made)
         return words_made
 
@@ -254,6 +273,13 @@ class ScrabbleBoard:
 
     def __del__(self):
         print("Game over")
+
+    def get_prefixed_word(self, word, position, horizontal):
+        cord = last_spot(position, horizontal)
+        while cord and not self.__spot_empty(cord):
+            word = self.__get_letter(cord) + word
+            cord = last_spot(cord, horizontal)
+        return word
 
 
 

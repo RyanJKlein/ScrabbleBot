@@ -1,42 +1,44 @@
-Player1 plays ADIEU at (7, 7) for 14 points
-Player1: 14	Player2: 0	
-Player2 plays TRIGO at (8, 4) for 15 points
-Player1: 14	Player2: 15	
-Player1 plays FIEND at (6, 3) for 15 points
-Player1: 29	Player2: 15	
-Player2 plays BESOM at (5, 12) for 18 points
-Player1: 29	Player2: 33	
-Player1 plays LIBER at (2, 13) for 17 points
-Player1: 46	Player2: 33	
-Player2 plays TAMPS at (5, 14) for 35 points
-Player1: 46	Player2: 68	
-Player1 plays HANCH at (8, 11) for 35 points
-Player1: 81	Player2: 68	
-Player2 plays GRAVY at (1, 11) for 33 points
-Player1: 81	Player2: 101	
-Player1 plays DORK at (9, 6) for 32 points
-Player1: 113	Player2: 101	
-Player2 plays EEVEN at (9, 13) for 28 points
-Player1: 113	Player2: 129	
-Player1 plays PILI at (5, 0) for 13 points
-Player1: 126	Player2: 129	
-Player2 plays NINJA at (9, 0) for 16 points
-Player1: 126	Player2: 145	
-Player1 plays WIZES at (14, 9) for 36 points
-Player1: 162	Player2: 145	
-Player2 plays GLEDS at (4, 3) for 21 points
-Player1: 162	Player2: 166	
-Player1 plays EURO at (3, 6) for 11 points
-Player1: 173	Player2: 166	
-Player2 plays URATE at (13, 5) for 16 points
-Player1: 173	Player2: 182	
-Player1 plays OXIC at (10, 4) for 34 points
-Player1: 207	Player2: 182	
-Player2 plays ALWAY at (2, 5) for 32 points
-Player1: 207	Player2: 214	
-Player1 plays EOAN at (0, 14) for 20 points
-Player1: 227	Player2: 214	
-Player2 plays TUFT at (1, 2) for 13 points
-Player1: 227	Player2: 227	
-Player1 plays OO at (0, 12) for 5 points
-Player1: 232	Player2: 227	
+Player1 plays NURL at (7, 7) for 8 points
+Player1: 8	Player2: 0	
+Player2 plays DIODE at (6, 3) for 11 points
+Player1: 8	Player2: 11	
+Player1 plays JIVE at (5, 0) for 19 points
+Player1: 27	Player2: 11	
+Player2 plays HOUSE at (4, 11) for 15 points
+Player1: 27	Player2: 26	
+Player1 plays MACON at (1, 10) for 30 points
+Player1: 57	Player2: 26	
+Player2 plays PINKY at (4, 3) for 34 points
+Player1: 57	Player2: 60	
+Player1 plays FINAL at (8, 12) for 33 points
+Player1: 90	Player2: 60	
+Player2 plays PARAE at (13, 8) for 18 points
+Player1: 90	Player2: 78	
+Player1 plays LIEU at (12, 5) for 11 points
+Player1: 101	Player2: 78	
+Player2 plays GIED at (8, 4) for 11 points
+Player1: 101	Player2: 89	
+Player1 plays TELEX at (11, 2) for 35 points
+Player1: 136	Player2: 89	
+Player2 plays ZIN at (0, 11) for 28 points
+Player1: 136	Player2: 117	
+Player1 plays SAYED at (10, 1) for 33 points
+Player1: 169	Player2: 117	
+Player2 plays CRAB at (3, 1) for 34 points
+Player1: 169	Player2: 151	
+Player1 plays MATHS at (4, 13) for 18 points
+Player1: 187	Player2: 151	
+Player2 plays WITE at (1, 14) for 12 points
+Player1: 187	Player2: 163	
+Player1 plays TARGE at (13, 1) for 23 points
+Player1: 210	Player2: 163	
+Player2 plays BATT at (9, 0) for 21 points
+Player1: 210	Player2: 184	
+Player1 plays ROVE at (2, 3) for 21 points
+Player1: 231	Player2: 184	
+Player2 plays WING at (0, 7) for 50 points
+Player1: 231	Player2: 234	
+Player1 plays ORS at (14, 6) for 14 points
+Player1: 245	Player2: 234	
+Player1 plays OF at (0, 8) for 15 points
+Player1: 260	Player2: 234	
