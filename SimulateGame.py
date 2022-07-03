@@ -24,8 +24,6 @@ def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
         if perm_val < 2:
             done = True
 
-
-    word = None
     for perm in all_perms:
         if perm in word_dictionary:
             if board.empty():
@@ -50,12 +48,69 @@ def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
     return None, None, None
 
 
+# Blanks are lowercase
+ALL_ENGLISH_LETTERS = [chr(x) for x in range(97, 97+26)]
+COMMON_ENGLISH_LETTERS = ['e', 'r', 's', 't']
+def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGLISH_LETTERS):
+    """
+    Only uses 5 letters at a time, but will use blanks and allow overlap
+    :param tiles: players tiles
+    :param board: current game board
+    :return: word, position, horizontal
+    """
+    perm_val = len(tiles) if len(tiles) < 5 else 5
+
+    all_perms = []
+    done = False
+    while not done:
+        combos = list(itertools.combinations(tiles, perm_val))
+        for combo in combos:
+            all_perms.extend([''.join(p) for p in itertools.permutations(combo)])
+        perm_val -= 1
+        if perm_val < 2:
+            done = True
+
+    for perm_raw in all_perms:
+        blanked_perms = []
+        if "*" in perm_raw:
+            for char_idx in range(len(perm_raw)):
+                if perm_raw[char_idx] == '*':
+                    for letter in blanks:
+                        new_perm = perm_raw[:char_idx]
+                        new_perm += letter
+                        new_perm += perm_raw[char_idx+1:]
+                        blanked_perms.append(new_perm)
+        else:
+            blanked_perms.append(perm_raw)
+        for perm in blanked_perms:
+            if perm.upper() in word_dictionary:
+                if board.empty():
+                    word = perm
+                    position = (7, 7)
+                    horizontal = True
+                    return word, position, horizontal
+                else:
+                    for horizontal in (False, True):
+                        xrange = range(Board.BOARD_SIDE_LEN) if horizontal else range(Board.BOARD_SIDE_LEN - len(perm))
+                        yrange = range(Board.BOARD_SIDE_LEN) if not horizontal else range(Board.BOARD_SIDE_LEN - len(perm))
+                        for x in xrange:
+                            for y in yrange:
+                                matches_made = board.get_candidate_words(perm, (x, y), horizontal)
+                                if valid_words(matches_made) and not board.word_overlaps(perm, (x, y), horizontal):
+                                    word = perm
+                                    position = (x, y)
+                                    return word, position, horizontal
+    # Dirty, clean up
+    return None, None, None
+
+
+
 def valid_words(word_list):
     if len(word_list) < 2:
         return False
     else:
         for word in word_list:
-            if word not in word_dictionary:
+            if word.upper() not in word_dictionary:
                 return False
     return True
 
@@ -79,13 +134,17 @@ def play_game(player1_bot, player2_bot, dictionary='scrabble_dictionary.txt'):
         bot = player1_bot if player_up == 'Player1' else player2_bot
         word, position, horizontal = bot(game.get_tiles(player_up), game.board)
         if word:
+            print(f'{player_up} played {word} for ', end='')
             points = game.take_turn(player_up, word, position, horizontal)
-            print(f'{player_up} played {word} for {points} points')
+            print(f'{points} points')
             consec_trades = 0
         else:
+            orig_tiles = game.get_tiles(player_up)
             game.trade_all_tiles(player_up)
-            print(f'{player_up} trades in all letters')
+            print(f'{player_up} trades in all letters; traded letters: {orig_tiles}')
             consec_trades += 1
+        if '*' in game.get_tiles(player_up):
+            print(f'{player_up} has a blank')
         player_up = 'Player1' if player_up == 'Player2' else 'Player2'
     # GAME OVER
     print("Game complete!")

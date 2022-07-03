@@ -1,44 +1,44 @@
-Player1 plays NURL at (7, 7) for 8 points
-Player1: 8	Player2: 0	
-Player2 plays DIODE at (6, 3) for 11 points
-Player1: 8	Player2: 11	
-Player1 plays JIVE at (5, 0) for 19 points
-Player1: 27	Player2: 11	
-Player2 plays HOUSE at (4, 11) for 15 points
-Player1: 27	Player2: 26	
-Player1 plays MACON at (1, 10) for 30 points
-Player1: 57	Player2: 26	
-Player2 plays PINKY at (4, 3) for 34 points
-Player1: 57	Player2: 60	
-Player1 plays FINAL at (8, 12) for 33 points
-Player1: 90	Player2: 60	
-Player2 plays PARAE at (13, 8) for 18 points
-Player1: 90	Player2: 78	
-Player1 plays LIEU at (12, 5) for 11 points
-Player1: 101	Player2: 78	
-Player2 plays GIED at (8, 4) for 11 points
-Player1: 101	Player2: 89	
-Player1 plays TELEX at (11, 2) for 35 points
-Player1: 136	Player2: 89	
-Player2 plays ZIN at (0, 11) for 28 points
-Player1: 136	Player2: 117	
-Player1 plays SAYED at (10, 1) for 33 points
-Player1: 169	Player2: 117	
-Player2 plays CRAB at (3, 1) for 34 points
-Player1: 169	Player2: 151	
-Player1 plays MATHS at (4, 13) for 18 points
-Player1: 187	Player2: 151	
-Player2 plays WITE at (1, 14) for 12 points
-Player1: 187	Player2: 163	
-Player1 plays TARGE at (13, 1) for 23 points
-Player1: 210	Player2: 163	
-Player2 plays BATT at (9, 0) for 21 points
-Player1: 210	Player2: 184	
-Player1 plays ROVE at (2, 3) for 21 points
-Player1: 231	Player2: 184	
-Player2 plays WING at (0, 7) for 50 points
-Player1: 231	Player2: 234	
-Player1 plays ORS at (14, 6) for 14 points
-Player1: 245	Player2: 234	
-Player1 plays OF at (0, 8) for 15 points
-Player1: 260	Player2: 234	
+Player1 plays MAYAS at (7, 7) for 22 points
+Player1: 22	Player2: 0	
+Player2 plays TABER at (6, 8) for 23 points
+Player1: 22	Player2: 23	
+Player1 plays NUDGE at (5, 4) for 12 points
+Player1: 34	Player2: 23	
+Player2 plays BINIT at (4, 8) for 20 points
+Player1: 34	Player2: 43	
+Player1 plays NAPPE at (4, 0) for 22 points
+Player1: 56	Player2: 43	
+Player2 plays JAKE at (8, 4) for 24 points
+Player1: 56	Player2: 67	
+Player1 plays AMOUr at (9, 6) for 21 points
+Player1: 77	Player2: 67	
+Player2 plays FIVE at (3, 4) for 17 points
+Player1: 77	Player2: 84	
+Player1 plays GOAT at (10, 3) for 17 points
+Player1: 94	Player2: 84	
+Player2 plays OLEIN at (2, 7) for 8 points
+Player1: 94	Player2: 92	
+Player1 plays STYLI at (6, 13) for 18 points
+Player1: 112	Player2: 92	
+Player2 plays NTH at (10, 14) for 9 points
+Player1: 112	Player2: 101	
+Player1 plays TAXOL at (11, 5) for 30 points
+Player1: 142	Player2: 101	
+Player2 plays WHORL at (1, 9) for 58 points
+Player1: 142	Player2: 159	
+Player1 plays CEDER at (1, 3) for 15 points
+Player1: 157	Player2: 159	
+Player2 plays WOOS at (10, 12) for 20 points
+Player1: 157	Player2: 179	
+Player1 plays ErODE at (12, 1) for 13 points
+Player1: 170	Player2: 179	
+Player2 plays QUA at (9, 1) for 35 points
+Player1: 170	Player2: 214	
+Player1 plays FIEND at (6, 0) for 18 points
+Player1: 188	Player2: 214	
+Player2 plays URIC at (12, 7) for 21 points
+Player1: 188	Player2: 235	
+Player1 plays SIR at (1, 14) for 16 points
+Player1: 204	Player2: 235	
+Player2 plays GIE at (0, 10) for 18 points
+Player1: 204	Player2: 253	

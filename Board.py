@@ -81,10 +81,13 @@ def calc_word_score(letters_dict):
     # Calculate the score of the placed tiles
     multiple = 1
     un_gained = 0
-    for letter in letters_dict:
-        letter_value = LETTER_POINTS[letter['LETTER']]
-        spot = BOARD_SCORES[letter['POSITION'][0]][letter['POSITION'][1]]
-        played = letter['PLAYED']
+    for letter_dict in letters_dict:
+        letter = letter_dict['LETTER']
+        if not letter == letter.upper():
+            letter = '*'
+        letter_value = LETTER_POINTS[letter]
+        spot = BOARD_SCORES[letter_dict['POSITION'][0]][letter_dict['POSITION'][1]]
+        played = letter_dict['PLAYED']
         if spot == 'TW' and played:
             multiple *= 3
             un_gained += letter_value
@@ -178,7 +181,7 @@ class ScrabbleBoard:
                 played_idx += 1
 
             letter_to_add = {
-                # FIXME minus 1 since we inc'd in loop
+                # Minus 1 since we inc'd in loop
                 'LETTER': word[played_idx-1] if played else self.__get_letter(cord),
                 'PLAYED': played,
                 'POSITION': cord,

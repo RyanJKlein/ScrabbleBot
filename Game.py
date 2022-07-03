@@ -28,7 +28,7 @@ LETTER_FREQUENCIES = {
     'X': 1,
     'Y': 2,
     'Z': 1,
-  #  '*': 2 #FIXME no blanks for now
+    '*': 2
 }
 
 class ScrabbleGame:
@@ -61,7 +61,10 @@ class ScrabbleGame:
         self.players[name]['POINTS'] += points
         if self.sim_bag:
             for char in word:
-                self.players[name]['TILES'].remove(char)
+                if char.isupper():
+                    self.players[name]['TILES'].remove(char)
+                else:
+                    self.players[name]['TILES'].remove('*')
             game_over = False
             if len(self.bag) < len(word):
                 self.players[name]['TILES'].extend(self.bag)
@@ -98,9 +101,6 @@ class ScrabbleGame:
             self.__update_log(f'{player}: {self.players[player]["POINTS"]}\t')
         self.__update_log("\n")
 
-    def __del__(self):
-        self.log_file.close()
-
     def trade_all_tiles(self, name):
         old_tiles = self.players[name]['TILES']
         if len(self.bag) > 0:
@@ -114,4 +114,5 @@ class ScrabbleGame:
                 self.bag = self.bag[7:]
                 self.bag.extend(old_tiles)
 
-
+    def __del__(self):
+        self.log_file.close()
