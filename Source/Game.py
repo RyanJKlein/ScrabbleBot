@@ -1,43 +1,15 @@
 from Source import Board
 import random
+import Input.ScrabbleConstants as Scrabble
 
-LETTER_FREQUENCIES = {
-    'A': 9,
-    'B': 2,
-    'C': 2,
-    'D': 4,
-    'E': 12,
-    'F': 2,
-    'G': 3,
-    'H': 2,
-    'I': 9,
-    'J': 1,
-    'K': 1,
-    'L': 4,
-    'M': 2,
-    'N': 6,
-    'O': 8,
-    'P': 2,
-    'Q': 1,
-    'R': 6,
-    'S': 4,
-    'T': 6,
-    'U': 4,
-    'V': 2,
-    'W': 2,
-    'X': 1,
-    'Y': 2,
-    'Z': 1,
-    '*': 2
-}
 
 class ScrabbleGame:
     def __init__(self, log_file_name="scrabble_game.txt", sdata_name="game_data.txt", sim_bag=False):
         if sim_bag:
         # Create bag as a list in random order
             self.bag = []
-            for letter in LETTER_FREQUENCIES:
-                to_add = [letter for x in range(LETTER_FREQUENCIES[letter])]
+            for letter in Scrabble.LETTER_FREQUENCIES:
+                to_add = [letter for x in range(Scrabble.LETTER_FREQUENCIES[letter])]
                 self.bag.extend(to_add)
             random.shuffle(self.bag)
         # Other init

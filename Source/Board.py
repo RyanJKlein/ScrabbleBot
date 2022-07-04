@@ -1,63 +1,13 @@
-import random
-
-BOARD_SIDE_LEN = 15
-LETTER_POINTS = {
-    'A': 1,
-    'B': 3,
-    'C': 3,
-    'D': 2,
-    'E': 1,
-    'F': 4,
-    'G': 2,
-    'H': 4,
-    'I': 1,
-    'J': 8,
-    'K': 5,
-    'L': 1,
-    'M': 3,
-    'N': 1,
-    'O': 1,
-    'P': 3,
-    'Q': 10,
-    'R': 1,
-    'S': 1,
-    'T': 1,
-    'U': 1,
-    'V': 4,
-    'W': 4,
-    'X': 8,
-    'Y': 4,
-    'Z': 10,
-    '*': 0
-}
-
-BOARD_SCORES = [
-    ['TW', 'NS', 'NS', 'DL', 'NS', 'NS', 'NS', 'TW', 'NS', 'NS', 'NS', 'DL', 'NS', 'NS', 'TW'],
-    ['NS', 'DW', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'DW', 'NS'],
-    ['NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'DL', 'NS', 'DL', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS'],
-    ['DL', 'NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'DL', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS', 'DL'],
-    ['NS', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'NS'],
-    ['NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS'],
-    ['NS', 'NS', 'DL', 'NS', 'NS', 'NS', 'DL', 'NS', 'DL', 'NS', 'NS', 'NS', 'DL', 'NS', 'NS'],
-    ['TL', 'NS', 'NS', 'DL', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'DL', 'NS', 'NS', 'TW'],
-    ['NS', 'NS', 'DL', 'NS', 'NS', 'NS', 'DL', 'NS', 'DL', 'NS', 'NS', 'NS', 'DL', 'NS', 'NS'],
-    ['NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS'],
-    ['NS', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'NS'],
-    ['DL', 'NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'DL', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS', 'DL'],
-    ['NS', 'NS', 'DW', 'NS', 'NS', 'NS', 'DL', 'NS', 'DL', 'NS', 'NS', 'NS', 'DW', 'NS', 'NS'],
-    ['NS', 'DW', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'TL', 'NS', 'NS', 'NS', 'DW', 'NS'],
-    ['TW', 'NS', 'NS', 'DL', 'NS', 'NS', 'NS', 'TW', 'NS', 'NS', 'NS', 'DL', 'NS', 'NS', 'TW']
-]
-
+import Input.ScrabbleConstants as Scrabble
 
 def next_spot(cord, horizontal):
     if horizontal:
-        if cord[1] + 1 >= BOARD_SIDE_LEN:
+        if cord[1] + 1 >= Scrabble.BOARD_SIDE_LEN:
             return None
         else:
             return cord[0], cord[1] + 1
     else:
-        if cord[0] + 1 >= BOARD_SIDE_LEN:
+        if cord[0] + 1 >= Scrabble.BOARD_SIDE_LEN:
             return None
         else:
             return cord[0] + 1, cord[1]
@@ -84,8 +34,8 @@ def calc_word_score(letters_dict):
         letter = letter_dict['LETTER']
         if not letter == letter.upper():
             letter = '*'
-        letter_value = LETTER_POINTS[letter]
-        spot = BOARD_SCORES[letter_dict['POSITION'][0]][letter_dict['POSITION'][1]]
+        letter_value = Scrabble.LETTER_POINTS[letter]
+        spot = Scrabble.BOARD_SCORES[letter_dict['POSITION'][0]][letter_dict['POSITION'][1]]
         played = letter_dict['PLAYED']
         if spot == 'TW' and played:
             multiple *= 3
@@ -110,11 +60,11 @@ def get_adj_cords(position):
     adj = []
     if left[1] > -1:
         adj.append(left)
-    if right[1] < BOARD_SIDE_LEN:
+    if right[1] < Scrabble.BOARD_SIDE_LEN:
         adj.append(right)
     if below[0] > -1:
         adj.append(below)
-    if above[0] < BOARD_SIDE_LEN:
+    if above[0] < Scrabble.BOARD_SIDE_LEN:
         adj.append(above)
     return adj
 
@@ -124,9 +74,9 @@ class ScrabbleBoard:
         self.file_name = board_file
         # If not loading from file, create new board
         if not load:
-            for row in range(BOARD_SIDE_LEN):
+            for row in range(Scrabble.BOARD_SIDE_LEN):
                 self.letter_placements.append([])
-                for col in range(BOARD_SIDE_LEN):
+                for col in range(Scrabble.BOARD_SIDE_LEN):
                     self.letter_placements[row].append('_')
             self.tiles_placed = 0
         else:
