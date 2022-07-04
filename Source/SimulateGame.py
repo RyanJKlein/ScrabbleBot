@@ -1,7 +1,10 @@
 from Source import Board, Game
 import itertools
+import Input.ScrabbleConstants as Scrabble
+
 
 word_dictionary = []
+
 
 def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
     """
@@ -33,8 +36,8 @@ def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
             else:
                 # Try every position on the word, horizontal
                 for horizontal in (False, True):
-                    xrange = range(Board.BOARD_SIDE_LEN) if horizontal else range(Board.BOARD_SIDE_LEN - len(perm))
-                    yrange = range(Board.BOARD_SIDE_LEN) if not horizontal else range(Board.BOARD_SIDE_LEN - len(perm))
+                    xrange = range(Scrabble.BOARD_SIDE_LEN) if horizontal else range(Scrabble.BOARD_SIDE_LEN - len(perm))
+                    yrange = range(Scrabble.BOARD_SIDE_LEN) if not horizontal else range(Scrabble.BOARD_SIDE_LEN - len(perm))
                     for x in xrange:
                         for y in yrange:
                             matches_made = board.get_candidate_words(perm, (x, y), horizontal)
@@ -93,9 +96,9 @@ def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGL
                     return word, position, horizontal
                 else:
                     for horizontal in (False, True):
-                        xrange = range(Board.BOARD_SIDE_LEN) if horizontal else range(Board.BOARD_SIDE_LEN - len(perm))
-                        yrange = range(Board.BOARD_SIDE_LEN) if not horizontal else range(
-                            Board.BOARD_SIDE_LEN - len(perm))
+                        xrange = range(Scrabble.BOARD_SIDE_LEN) if horizontal else range(Scrabble.BOARD_SIDE_LEN - len(perm))
+                        yrange = range(Scrabble.BOARD_SIDE_LEN) if not horizontal else range(
+                            Scrabble.BOARD_SIDE_LEN - len(perm))
                         for x in xrange:
                             for y in yrange:
                                 if board.connects((x, y), len(perm), horizontal):
@@ -138,9 +141,9 @@ def valid_words(word_list):
                 return False
     return True
 
-def play_game(player1_bot, player2_bot, dictionary='scrabble_dictionary.txt'):
+def play_game(player1_bot, player2_bot, dictionary='Input/scrabble_dictionary.txt'):
     global word_dictionary
-    game = Game.ScrabbleGame(log_file_name='../Output/game_simulation.txt', sdata_name='game_simulation_data.txt',
+    game = Game.ScrabbleGame(log_file_name='Output/game_simulation.txt', sdata_name='game_simulation_data.txt',
                              sim_bag=True)
     game.add_player('Player1')
     game.add_player('Player2')

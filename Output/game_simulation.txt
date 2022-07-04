@@ -1,12 +1,4 @@
-Player1 plays ODYNE at (7, 7) for 20 points
-Player1: 20			Player2: 0			
-Player2 plays TELEX at (8, 3) for 22 points
-Player1: 20			Player2: 22			
-Player1 plays BOOTS at (6, 3) for 18 points
-Player1: 38			Player2: 22			
-Player2 plays GYRED at (7, 0) for 25 points
-Player1: 38			Player2: 47			
-Player1 plays VISA at (5, 0) for 15 points
-Player1: 53			Player2: 47			
-Player2 plays URGE at (6, 10) for 11 points
-Player1: 53			Player2: 58			
+Player1 plays JONES at (7, 7) for 26 points
+Player1: 26			Player2: 0			
+Player2 plays WINOS at (6, 8) for 28 points
+Player1: 26			Player2: 28			
