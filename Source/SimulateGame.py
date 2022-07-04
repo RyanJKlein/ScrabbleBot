@@ -1,10 +1,9 @@
 from Source import Board, Game
 import itertools
 import Input.ScrabbleConstants as Scrabble
-
+from pathlib import Path
 
 word_dictionary = []
-
 
 def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
     """
@@ -141,14 +140,17 @@ def valid_words(word_list):
                 return False
     return True
 
-def play_game(player1_bot, player2_bot, dictionary='../Input/scrabble_dictionary.txt'):
+def play_game(player1_bot, player2_bot, dictionary_path=None):
     global word_dictionary
-    game = Game.ScrabbleGame(log_file_name='../Output/game_simulation.txt', sdata_name='game_simulation_data.txt',
+    if not dictionary_path:
+        dictionary_path = Path('../Input/scrabble_dictionary.txt')
+    log_file_path = Path("../Output/game_simulation.txt")
+    game = Game.ScrabbleGame(log_file_name="game_simulation.txt", sdata_name='game_simulation_data.txt',
                              sim_bag=True)
     game.add_player('Player1')
     game.add_player('Player2')
 
-    with open(dictionary, 'r') as file_dict:
+    with open(dictionary_path, 'r') as file_dict:
         word_dictionary = []
         lines = file_dict.readlines()
         for line in lines:

@@ -1,4 +1,2 @@
-Player1 plays EANOI at (7, 7) for 12 points
-Player1: 12			Player2: 0			
-Player2 plays DROIT at (8, 3) for 9 points
-Player1: 12			Player2: 9			
+Player1 plays GGRES at (7, 7) for 16 points
+Player1: 16			Player2: 0			

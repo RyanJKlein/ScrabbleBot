@@ -1,4 +1,10 @@
-import Board, Game, SimulateGame
+import Board
+import Game
+import SimulateGame
+import sys
+from pathlib import Path
+
+sys.path.append(Path(r"..\\"))
 
 TEST_BOARD = False
 TEST_GAME = False
@@ -18,25 +24,6 @@ if TEST_GAME:
 
     game.take_turn("Ryan", "DAB", (7, 7), True)
     game.set_tiles("Ryan", ['Y', 'A', 'E', 'F', 'P', 'E', 'G'])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if TEST_BOARD:
     board = Board.ScrabbleBoard(load=True)

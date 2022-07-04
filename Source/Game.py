@@ -2,7 +2,6 @@ from Source import Board
 import random
 import Input.ScrabbleConstants as Scrabble
 
-
 class ScrabbleGame:
     def __init__(self, log_file_name="scrabble_game.txt", sdata_name="game_data.txt", sim_bag=False):
         if sim_bag:
