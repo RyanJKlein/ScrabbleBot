@@ -1,6 +1,4 @@
-import Board
-import Game
-import SimulateGame
+from Source import Board, Game, SimulateGame
 
 TEST_BOARD = False
 TEST_GAME = False
@@ -45,7 +43,7 @@ if TEST_BOARD:
     points = board.play_word('STREAM', (7, 7), False)
     print(points)
 
-    board = Board.ScrabbleBoard(board_file='board2.txt')
+    board = Board.ScrabbleBoard(board_file='../ResultsArchive/board2.txt')
     points = board.play_word('STREAM', (7, 7), True)
     print(points)
     points = board.play_word('MAKE', (7, 12), False)

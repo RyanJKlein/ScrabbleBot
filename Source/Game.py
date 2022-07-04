@@ -1,4 +1,4 @@
-import Board
+from Source import Board
 import random
 
 LETTER_FREQUENCIES = {
