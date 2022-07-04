@@ -5,9 +5,7 @@ import sys
 from pathlib import Path
 import os
 
-# FIXME dirty fix
-path_to_append = Path(os.getcwd()).parent
-sys.path.append(path_to_append)
+sys.path.append(os.getcwd())
 
 TEST_BOARD = False
 TEST_GAME = False
