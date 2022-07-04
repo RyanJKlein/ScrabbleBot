@@ -1,4 +1,4 @@
-Player1 plays JONES at (7, 7) for 26 points
-Player1: 26			Player2: 0			
-Player2 plays WINOS at (6, 8) for 28 points
-Player1: 26			Player2: 28			
+Player1 plays EANOI at (7, 7) for 12 points
+Player1: 12			Player2: 0			
+Player2 plays DROIT at (8, 3) for 9 points
+Player1: 12			Player2: 9			

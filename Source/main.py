@@ -1,4 +1,4 @@
-from Source import Board, Game, SimulateGame
+import Board, Game, SimulateGame
 
 TEST_BOARD = False
 TEST_GAME = False
