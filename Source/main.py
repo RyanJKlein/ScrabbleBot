@@ -6,10 +6,8 @@ from pathlib import Path
 import os
 
 # FIXME dirty fix
-import platform
-if platform.system() == "Windows":
-    sys.path.append(Path(r"C:\Users\rryan\Documents\ScrabbleBot"))
 path_to_append = Path(os.getcwd()).parent
+sys.path.append(path_to_append)
 
 TEST_BOARD = False
 TEST_GAME = False
