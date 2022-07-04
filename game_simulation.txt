@@ -1,44 +1,12 @@
-Player1 plays MAYAS at (7, 7) for 22 points
-Player1: 22	Player2: 0	
-Player2 plays TABER at (6, 8) for 23 points
-Player1: 22	Player2: 23	
-Player1 plays NUDGE at (5, 4) for 12 points
-Player1: 34	Player2: 23	
-Player2 plays BINIT at (4, 8) for 20 points
-Player1: 34	Player2: 43	
-Player1 plays NAPPE at (4, 0) for 22 points
-Player1: 56	Player2: 43	
-Player2 plays JAKE at (8, 4) for 24 points
-Player1: 56	Player2: 67	
-Player1 plays AMOUr at (9, 6) for 21 points
-Player1: 77	Player2: 67	
-Player2 plays FIVE at (3, 4) for 17 points
-Player1: 77	Player2: 84	
-Player1 plays GOAT at (10, 3) for 17 points
-Player1: 94	Player2: 84	
-Player2 plays OLEIN at (2, 7) for 8 points
-Player1: 94	Player2: 92	
-Player1 plays STYLI at (6, 13) for 18 points
-Player1: 112	Player2: 92	
-Player2 plays NTH at (10, 14) for 9 points
-Player1: 112	Player2: 101	
-Player1 plays TAXOL at (11, 5) for 30 points
-Player1: 142	Player2: 101	
-Player2 plays WHORL at (1, 9) for 58 points
-Player1: 142	Player2: 159	
-Player1 plays CEDER at (1, 3) for 15 points
-Player1: 157	Player2: 159	
-Player2 plays WOOS at (10, 12) for 20 points
-Player1: 157	Player2: 179	
-Player1 plays ErODE at (12, 1) for 13 points
-Player1: 170	Player2: 179	
-Player2 plays QUA at (9, 1) for 35 points
-Player1: 170	Player2: 214	
-Player1 plays FIEND at (6, 0) for 18 points
-Player1: 188	Player2: 214	
-Player2 plays URIC at (12, 7) for 21 points
-Player1: 188	Player2: 235	
-Player1 plays SIR at (1, 14) for 16 points
-Player1: 204	Player2: 235	
-Player2 plays GIE at (0, 10) for 18 points
-Player1: 204	Player2: 253	
+Player1 plays ODYNE at (7, 7) for 20 points
+Player1: 20			Player2: 0			
+Player2 plays TELEX at (8, 3) for 22 points
+Player1: 20			Player2: 22			
+Player1 plays BOOTS at (6, 3) for 18 points
+Player1: 38			Player2: 22			
+Player2 plays GYRED at (7, 0) for 25 points
+Player1: 38			Player2: 47			
+Player1 plays VISA at (5, 0) for 15 points
+Player1: 53			Player2: 47			
+Player2 plays URGE at (6, 10) for 11 points
+Player1: 53			Player2: 58			

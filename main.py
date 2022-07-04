@@ -8,6 +8,7 @@ TEST_SIM = True
 
 if TEST_SIM:
     #SimulateGame.play_game(SimulateGame.lazy_brute_bot, SimulateGame.lazy_brute_bot)
+    #SimulateGame.play_game(SimulateGame.lazy_brute_bot_smarter, SimulateGame.lazy_brute_bot_smarter)
     SimulateGame.play_game(SimulateGame.lazy_brute_bot_smarter, SimulateGame.lazy_brute_bot_smarter)
 
 if TEST_GAME:

@@ -1,6 +1,7 @@
 import Game
 import Board
 import itertools
+import time
 
 word_dictionary = []
 
@@ -25,7 +26,7 @@ def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
             done = True
 
     for perm in all_perms:
-        if perm in word_dictionary:
+        if valid_word(perm):
             if board.empty():
                 word = perm
                 position = (7, 7)
@@ -51,9 +52,9 @@ def lazy_brute_bot(tiles, board: Board.ScrabbleBoard):
 # Blanks are lowercase
 ALL_ENGLISH_LETTERS = [chr(x) for x in range(97, 97+26)]
 COMMON_ENGLISH_LETTERS = ['e', 'r', 's', 't']
-def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGLISH_LETTERS):
+def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGLISH_LETTERS, check_segments=True):
     """
-    Only uses 5 letters at a time, but will use blanks and allow overlap
+    Only uses 5 letters at a time, but will use blanks
     :param tiles: players tiles
     :param board: current game board
     :return: word, position, horizontal
@@ -62,6 +63,7 @@ def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGL
 
     all_perms = []
     done = False
+    # start_make_combos = time.time()
     while not done:
         combos = list(itertools.combinations(tiles, perm_val))
         for combo in combos:
@@ -69,6 +71,8 @@ def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGL
         perm_val -= 1
         if perm_val < 2:
             done = True
+    # duration = time.time() - start_make_combos
+    # print(f"Time to make combos: {duration} seconds")
 
     for perm_raw in all_perms:
         blanked_perms = []
@@ -83,7 +87,7 @@ def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGL
         else:
             blanked_perms.append(perm_raw)
         for perm in blanked_perms:
-            if perm.upper() in word_dictionary:
+            if valid_word(perm.upper()) or (check_segments and valid_word_segment(perm.upper())):
                 if board.empty():
                     word = perm
                     position = (7, 7)
@@ -95,22 +99,43 @@ def lazy_brute_bot_smarter(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGL
                         yrange = range(Board.BOARD_SIDE_LEN) if not horizontal else range(Board.BOARD_SIDE_LEN - len(perm))
                         for x in xrange:
                             for y in yrange:
-                                matches_made = board.get_candidate_words(perm, (x, y), horizontal)
-                                if valid_words(matches_made) and not board.word_overlaps(perm, (x, y), horizontal):
-                                    word = perm
-                                    position = (x, y)
-                                    return word, position, horizontal
+                                if board.connects((x, y), len(perm), horizontal):
+                                    matches_made = board.get_candidate_words(perm, (x, y), horizontal)
+                                    if valid_words(matches_made) and not board.word_overlaps(perm, (x, y), horizontal):
+                                        word = perm
+                                        position = (x, y)
+                                        return word, position, horizontal
     # Dirty, clean up
     return None, None, None
 
 
+def bot_three(tiles, board: Board.ScrabbleBoard, blanks=COMMON_ENGLISH_LETTERS):
+    """
+    Searches for
+    :param tiles: players tiles
+    :param board: current game board
+    :return: word, position, horizontal
+    """
+    perm_val = len(tiles) if len(tiles) < 5 else 5
+
+
+
+def valid_word(word):
+    return word in word_dictionary
+
+# FIXME - implement
+def valid_word_segment(word):
+    for item in word_dictionary:
+        if word in item:
+            return True
+    return False
 
 def valid_words(word_list):
     if len(word_list) < 2:
         return False
     else:
         for word in word_list:
-            if word.upper() not in word_dictionary:
+            if not valid_word(word.upper()):
                 return False
     return True
 

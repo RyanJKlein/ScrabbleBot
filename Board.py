@@ -50,18 +50,17 @@ BOARD_SCORES = [
 ]
 
 
-
 def next_spot(cord, horizontal):
     if horizontal:
         if cord[1] + 1 >= BOARD_SIDE_LEN:
             return None
         else:
-            return cord[0], cord[1]+1
+            return cord[0], cord[1] + 1
     else:
         if cord[0] + 1 >= BOARD_SIDE_LEN:
             return None
         else:
-            return cord[0]+1, cord[1]
+            return cord[0] + 1, cord[1]
 
 
 def last_spot(cord, horizontal):
@@ -69,12 +68,12 @@ def last_spot(cord, horizontal):
         if cord[1] - 1 < 0:
             return None
         else:
-            return cord[0], cord[1]-1
+            return cord[0], cord[1] - 1
     else:
         if cord[0] - 1 < 0:
             return None
         else:
-            return cord[0]-1, cord[1]
+            return cord[0] - 1, cord[1]
 
 
 def calc_word_score(letters_dict):
@@ -103,6 +102,22 @@ def calc_word_score(letters_dict):
     return un_gained * multiple
 
 
+def get_adj_cords(position):
+    left = (position[0], position[1]-1)
+    right = (position[0], position[1]+1)
+    below = (position[0]-1, position[1])
+    above = (position[0]+1, position[1])
+    adj = []
+    if left[1] > -1:
+        adj.append(left)
+    if right[1] < BOARD_SIDE_LEN:
+        adj.append(right)
+    if below[0] > -1:
+        adj.append(below)
+    if above[0] < BOARD_SIDE_LEN:
+        adj.append(above)
+    return adj
+
 class ScrabbleBoard:
     def __init__(self, board_file='scrabble_board.txt', load=False):
         self.letter_placements = []
@@ -113,11 +128,16 @@ class ScrabbleBoard:
                 self.letter_placements.append([])
                 for col in range(BOARD_SIDE_LEN):
                     self.letter_placements[row].append('_')
+            self.tiles_placed = 0
         else:
             with open(board_file, 'r') as in_file:
                 lines = in_file.readlines()
+                self.tiles_placed = 0
                 for line in lines:
-                        self.letter_placements.append(line.strip().split(','))
+                    self.letter_placements.append(line.strip().split(','))
+                    for val in line.strip().split(','):
+                        if val != '_':
+                            self.tiles_placed += 1
             self.__save_board()
 
     def __spot_empty(self, cord):
@@ -168,7 +188,7 @@ class ScrabbleBoard:
                     else:
                         letter = self.__get_letter(cord_candidate)
                     letter_to_add = {
-                        'LETTER': letter, # Add letter on board if there, if not add played letter
+                        'LETTER': letter,  # Add letter on board if there, if not add played letter
                         'PLAYED': True if cord_candidate == cord else False,
                         'POSITION': cord_candidate
                     }
@@ -182,7 +202,7 @@ class ScrabbleBoard:
 
             letter_to_add = {
                 # Minus 1 since we inc'd in loop
-                'LETTER': word[played_idx-1] if played else self.__get_letter(cord),
+                'LETTER': word[played_idx - 1] if played else self.__get_letter(cord),
                 'PLAYED': played,
                 'POSITION': cord,
             }
@@ -252,9 +272,10 @@ class ScrabbleBoard:
         x = cord[0]
         y = cord[1]
         self.letter_placements[x][y] = letter
+        self.tiles_placed += 1
 
     def empty(self):
-        return self.__get_letter((7,7)) == '_'
+        return self.__get_letter((7, 7)) == '_'
 
     def get_candidate_words(self, word, position, horizontal):
         words_list = self.__get_played_words(word, position, horizontal)
@@ -284,8 +305,12 @@ class ScrabbleBoard:
             cord = last_spot(cord, horizontal)
         return word
 
-
-
-
-
+    def connects(self, position: tuple, length, horizontal):
+        iteration = 0
+        while iteration < length and position:
+            for pos in get_adj_cords(position):
+                if self.__spot_empty(pos):
+                    return True
+            position = next_spot(position, horizontal)
+        return False
 

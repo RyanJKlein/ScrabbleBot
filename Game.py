@@ -98,7 +98,7 @@ class ScrabbleGame:
 
     def __log_score(self):
         for player in self.players:
-            self.__update_log(f'{player}: {self.players[player]["POINTS"]}\t')
+            self.__update_log(f'{player}: {self.players[player]["POINTS"]}\t\t\t')
         self.__update_log("\n")
 
     def trade_all_tiles(self, name):
