@@ -3,8 +3,13 @@ import Game
 import SimulateGame
 import sys
 from pathlib import Path
+import os
 
-sys.path.append(Path(r"..\\"))
+# FIXME dirty fix
+import platform
+if platform.system() == "Windows":
+    sys.path.append(Path(r"C:\Users\rryan\Documents\ScrabbleBot"))
+path_to_append = Path(os.getcwd()).parent
 
 TEST_BOARD = False
 TEST_GAME = False
