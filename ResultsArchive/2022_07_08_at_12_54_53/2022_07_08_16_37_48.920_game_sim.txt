@@ -1,0 +1,42 @@
+Player1 plays PAVLO at (7, 7) for 22 points
+Player1: 22			Player2: 0			
+Player2 plays OTTAR at (8, 4) for 14 points
+Player1: 22			Player2: 14			
+Player1 plays HEDGe at (7, 1) for 15 points
+Player1: 37			Player2: 14			
+Player2 plays FUNGI at (9, 8) for 17 points
+Player1: 37			Player2: 31			
+Player1 plays BARNS at (9, 0) for 13 points
+Player1: 50			Player2: 31			
+Player2 plays OCTET at (8, 13) for 31 points
+Player1: 50			Player2: 62			
+Player1 plays EAUX at (5, 14) for 42 points
+Player1: 92			Player2: 62			
+Player2 plays WOO at (3, 13) for 12 points
+Player1: 92			Player2: 74			
+Player1 plays DOWIE at (6, 0) for 35 points
+Player1: 127			Player2: 74			
+Player2 plays PILIS at (13, 9) for 42 points
+Player1: 127			Player2: 116			
+Player1 plays BIOTA at (12, 7) for 16 points
+Player1: 143			Player2: 116			
+Player2 plays AEGIS at (14, 5) for 23 points
+Player1: 143			Player2: 139			
+Player1 plays LIMEN at (13, 1) for 22 points
+Player1: 165			Player2: 139			
+Player2 plays MITY at (14, 0) for 54 points
+Player1: 165			Player2: 193			
+Player1 plays REDIA at (11, 3) for 19 points
+Player1: 184			Player2: 193			
+Player2 plays RENAL at (0, 12) for 17 points
+Player1: 184			Player2: 210			
+Player1 plays JEON at (0, 14) for 43 points
+Player1: 227			Player2: 210			
+Player2 plays NAH at (5, 1) for 29 points
+Player1: 227			Player2: 239			
+Player1 plays FED at (1, 11) for 37 points
+Player1: 264			Player2: 239			
+Player2 plays CERES at (4, 3) for 24 points
+Player1: 264			Player2: 263			
+Player1 plays RUsK at (3, 6) for 13 points
+Player1: 277			Player2: 263			
