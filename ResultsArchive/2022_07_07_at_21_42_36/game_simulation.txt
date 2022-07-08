@@ -1,0 +1,48 @@
+Player1 plays AVOES at (7, 7) for 18 points
+Player1: 18			Player2: 0			
+Player2 plays tUBAE at (8, 3) for 9 points
+Player1: 18			Player2: 9			
+Player1 plays ZINEB at (9, 2) for 31 points
+Player1: 49			Player2: 9			
+Player2 plays KNEW at (6, 4) for 18 points
+Player1: 49			Player2: 27			
+Player1 plays OURIE at (10, 6) for 15 points
+Player1: 64			Player2: 27			
+Player2 plays WAGES at (11, 2) for 24 points
+Player1: 64			Player2: 51			
+Player1 plays FANG at (6, 10) for 16 points
+Player1: 80			Player2: 51			
+Player2 plays YOGI at (9, 10) for 15 points
+Player1: 80			Player2: 66			
+Player1 plays TRACT at (4, 14) for 30 points
+Player1: 110			Player2: 66			
+Player2 plays MU at (3, 13) for 6 points
+Player1: 110			Player2: 72			
+Player2 plays RYE at (1, 12) for 16 points
+Player1: 110			Player2: 88			
+Player1 plays ALEC at (11, 10) for 18 points
+Player1: 128			Player2: 88			
+Player2 plays RERAN at (12, 8) for 25 points
+Player1: 128			Player2: 113			
+Player1 plays OORIE at (13, 4) for 9 points
+Player1: 137			Player2: 113			
+Player2 plays IDEA at (12, 0) for 22 points
+Player1: 137			Player2: 135			
+Player1 plays FOAL at (14, 8) for 14 points
+Player1: 151			Player2: 135			
+Player2 plays JIMP at (14, 1) for 22 points
+Player1: 151			Player2: 157			
+Player1 plays ID at (5, 5) for 12 points
+Player1: 163			Player2: 157			
+Player2 plays HOLTs at (4, 1) for 16 points
+Player1: 163			Player2: 173			
+Player1 plays DENI at (5, 0) for 18 points
+Player1: 181			Player2: 173			
+Player2 plays UT at (3, 0) for 9 points
+Player1: 181			Player2: 182			
+Player1 plays PSST at (10, 14) for 15 points
+Player1: 196			Player2: 182			
+Player2 plays DI at (13, 12) for 12 points
+Player1: 196			Player2: 194			
+Player2 plays LO at (0, 11) for 5 points
+Player1: 196			Player2: 199			
