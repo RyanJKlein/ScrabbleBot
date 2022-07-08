@@ -1,0 +1,8 @@
+Player1 plays RFISM at (7, 7) for 26 points
+Player1: 26			Player2: 0			
+Player2 plays AZIDe at (6, 3) for 17 points
+Player1: 26			Player2: 17			
+Player1 plays SAJOU at (5, 7) for 30 points
+Player1: 56			Player2: 17			
+Player2 plays VOTE at (7, 0) for 19 points
+Player1: 56			Player2: 36			
