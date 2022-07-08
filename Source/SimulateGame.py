@@ -142,7 +142,8 @@ def valid_words(word_list):
 def play_game(player1_bot, player2_bot, dictionary_path=None):
     global word_dictionary
     if not dictionary_path:
-        dictionary_path = os.path.join(os.getcwd(), 'Input' 'scrabble_dictionary.txt')
+        os.chdir('..')
+        dictionary_path = os.path.join(os.getcwd(), 'Input', 'scrabble_dictionary.txt')
     game = Game.ScrabbleGame(log_file_name="game_simulation.txt", sdata_name='game_simulation_data.txt',
                              sim_bag=True)
     game.add_player('Player1')

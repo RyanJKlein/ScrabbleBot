@@ -1,11 +1,11 @@
+import sys
+import os
+sys.path.append(os.getcwd())
+
 import Board
 import Game
 import SimulateGame
-import sys
 from pathlib import Path
-import os
-
-sys.path.append(os.getcwd())
 
 TEST_BOARD = False
 TEST_GAME = False
