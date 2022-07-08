@@ -1,0 +1,40 @@
+Player1 plays OREES at (7, 7) for 12 points
+Player1: 12			Player2: 0			
+Player2 plays LUTEA at (6, 5) for 14 points
+Player1: 12			Player2: 14			
+Player1 plays ODEA at (5, 2) for 11 points
+Player1: 23			Player2: 14			
+Player2 plays IRATE at (4, 3) for 20 points
+Player1: 23			Player2: 34			
+Player1 plays IMAGO at (3, 0) for 31 points
+Player1: 54			Player2: 34			
+Player2 plays DINGY at (2, 4) for 20 points
+Player1: 54			Player2: 54			
+Player1 plays OATEr at (1, 8) for 11 points
+Player1: 65			Player2: 54			
+Player2 plays FUNGO at (8, 3) for 14 points
+Player1: 65			Player2: 68			
+Player1 plays ALEPH at (0, 4) for 39 points
+Player1: 104			Player2: 68			
+Player2 plays YWIS at (6, 0) for 20 points
+Player1: 104			Player2: 88			
+Player1 plays MIBS at (5, 9) for 25 points
+Player1: 129			Player2: 88			
+Player2 plays RICEs at (9, 0) for 14 points
+Player1: 129			Player2: 102			
+Player1 plays REPIN at (10, 3) for 24 points
+Player1: 153			Player2: 102			
+Player2 plays EXTOL at (11, 7) for 29 points
+Player1: 153			Player2: 131			
+Player1 plays ENTIA at (12, 5) for 22 points
+Player1: 175			Player2: 131			
+Player2 plays DIVOT at (13, 1) for 26 points
+Player1: 175			Player2: 157			
+Player1 plays BOA at (0, 11) for 16 points
+Player1: 191			Player2: 157			
+Player1 plays HAVES at (11, 0) for 47 points
+Player1: 238			Player2: 157			
+Player2 plays JUNK at (13, 9) for 57 points
+Player1: 238			Player2: 214			
+Player2 plays FURL at (8, 12) for 24 points
+Player1: 238			Player2: 238			
