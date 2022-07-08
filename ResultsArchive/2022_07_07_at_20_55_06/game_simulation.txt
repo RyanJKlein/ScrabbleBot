@@ -1,0 +1,4 @@
+Player1 plays EVOTE at (7, 7) for 18 points
+Player1: 18			Player2: 0			
+Player2 plays LUAU at (6, 9) for 11 points
+Player1: 18			Player2: 11			
