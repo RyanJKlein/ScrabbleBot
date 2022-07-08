@@ -148,7 +148,7 @@ def play_game(player1_bot, player2_bot, dictionary_path=None):
         if current_folder == 'Source':
             os.chdir('..')
         dictionary_path = os.path.join(os.getcwd(), 'Input', 'scrabble_dictionary.txt')
-    timestamp_raw = datetime.datetime.fromtimestamp(1500000000)
+    timestamp_raw = datetime.datetime.utcnow()
     timestamp = timestamp_raw.strftime('%Y_%m_%d_%H_%M_%S.%f')[:-3]
     log_name = f"{timestamp}_game_sim.txt"
     sdata_name = f"{timestamp}_game_sim_sdata.txt"
