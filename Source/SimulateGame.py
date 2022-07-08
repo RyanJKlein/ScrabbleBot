@@ -149,7 +149,7 @@ def play_game(player1_bot, player2_bot, dictionary_path=None):
             os.chdir('..')
         dictionary_path = os.path.join(os.getcwd(), 'Input', 'scrabble_dictionary.txt')
     timestamp_raw = datetime.datetime.fromtimestamp(1500000000)
-    timestamp = timestamp_raw.strftime('%Y_%m_%d_%H_%M_%S')
+    timestamp = timestamp_raw.strftime('%Y_%m_%d_%H_%M_%S.%f')[:-3]
     log_name = f"{timestamp}_game_sim.txt"
     sdata_name = f"{timestamp}_game_sim_sdata.txt"
     game = Game.ScrabbleGame(log_file_name=log_name, sdata_name=sdata_name,
