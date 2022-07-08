@@ -1,0 +1,36 @@
+Player1 plays EYORI at (7, 7) for 18 points
+Player1: 18			Player2: 0			
+Player2 plays DINER at (6, 3) for 9 points
+Player1: 18			Player2: 9			
+Player1 plays REATA at (5, 1) for 18 points
+Player1: 36			Player2: 9			
+Player1 plays FIFER at (4, 5) for 17 points
+Player1: 53			Player2: 9			
+Player2 plays MIRI at (8, 4) for 10 points
+Player1: 53			Player2: 19			
+Player2 plays WOO at (3, 8) for 13 points
+Player1: 53			Player2: 32			
+Player1 plays USAGE at (2, 4) for 15 points
+Player1: 68			Player2: 32			
+Player2 plays UEUE at (4, 10) for 32 points
+Player1: 68			Player2: 64			
+Player1 plays OBIA at (6, 10) for 13 points
+Player1: 81			Player2: 64			
+Player2 plays WARD at (4, 0) for 17 points
+Player1: 81			Player2: 81			
+Player1 plays OAtEN at (1, 0) for 10 points
+Player1: 91			Player2: 81			
+Player2 plays LOTTO at (9, 0) for 11 points
+Player1: 91			Player2: 92			
+Player1 plays BEANO at (10, 4) for 28 points
+Player1: 119			Player2: 92			
+Player2 plays EXIT at (11, 7) for 24 points
+Player1: 119			Player2: 116			
+Player1 plays JUICE at (12, 3) for 20 points
+Player1: 139			Player2: 116			
+Player2 plays SHIPE at (10, 9) for 24 points
+Player1: 139			Player2: 140			
+Player1 plays SHeND at (12, 9) for 27 points
+Player1: 166			Player2: 140			
+Player2 plays LAVA at (7, 0) for 17 points
+Player1: 166			Player2: 157			
