@@ -1,3 +1,5 @@
+import datetime
+
 from Source import Board, Game
 import itertools
 import Input.ScrabbleConstants as Scrabble
@@ -146,6 +148,10 @@ def play_game(player1_bot, player2_bot, dictionary_path=None):
         if current_folder == 'Source':
             os.chdir('..')
         dictionary_path = os.path.join(os.getcwd(), 'Input', 'scrabble_dictionary.txt')
+    timestamp_raw = datetime.datetime.fromtimestamp(1500000000)
+    timestamp = timestamp_raw.strftime('%Y_%m_%d_%H_%M_%S')
+    log_name = f"{timestamp}_game_sim.txt"
+    sdata_name = f"{timestamp}_game_sim_sdata.txt"
     game = Game.ScrabbleGame(log_file_name="game_simulation.txt", sdata_name='game_simulation_data.txt',
                              sim_bag=True)
     game.add_player('Player1')
