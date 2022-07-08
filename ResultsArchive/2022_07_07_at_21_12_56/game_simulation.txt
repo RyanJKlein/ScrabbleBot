@@ -1,0 +1,46 @@
+Player1 plays TATER at (7, 7) for 12 points
+Player1: 12			Player2: 0			
+Player2 plays IRONY at (6, 9) for 15 points
+Player1: 12			Player2: 15			
+Player1 plays JOrAM at (8, 4) for 25 points
+Player1: 37			Player2: 15			
+Player2 plays OLEA at (5, 6) for 11 points
+Player1: 37			Player2: 26			
+Player1 plays SEGNO at (6, 3) for 14 points
+Player1: 51			Player2: 26			
+Player2 plays CAVE at (4, 3) for 21 points
+Player1: 51			Player2: 47			
+Player1 plays OGEE at (4, 8) for 17 points
+Player1: 68			Player2: 47			
+Player2 plays TORE at (9, 3) for 20 points
+Player1: 68			Player2: 67			
+Player1 plays BLUE at (10, 6) for 10 points
+Player1: 78			Player2: 67			
+Player2 plays QUA at (10, 1) for 14 points
+Player1: 78			Player2: 81			
+Player1 plays INPUT at (11, 1) for 37 points
+Player1: 115			Player2: 81			
+Player2 plays EIDOS at (0, 12) for 18 points
+Player1: 115			Player2: 99			
+Player1 plays WILD at (9, 9) for 29 points
+Player1: 144			Player2: 99			
+Player2 plays EROSE at (11, 9) for 16 points
+Player1: 144			Player2: 115			
+Player1 plays AZAN at (12, 5) for 26 points
+Player1: 170			Player2: 115			
+Player2 plays LIFT at (13, 2) for 14 points
+Player1: 170			Player2: 129			
+Player1 plays CHAWS at (7, 14) for 49 points
+Player1: 219			Player2: 129			
+Player2 plays sPIRY at (14, 5) for 30 points
+Player1: 219			Player2: 159			
+Player1 plays BRANT at (13, 9) for 39 points
+Player1: 258			Player2: 159			
+Player2 plays IMID at (14, 0) for 34 points
+Player1: 258			Player2: 193			
+Player1 plays VUGH at (7, 0) for 32 points
+Player1: 290			Player2: 193			
+Player2 plays DE at (1, 13) for 15 points
+Player1: 290			Player2: 208			
+Player2 plays KI at (12, 11) for 25 points
+Player1: 290			Player2: 233			
