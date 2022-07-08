@@ -1,0 +1,50 @@
+Player1 plays ONEOU at (7, 7) for 12 points
+Player1: 12			Player2: 0			
+Player2 plays RECON at (6, 3) for 10 points
+Player1: 12			Player2: 10			
+Player1 plays URGED at (5, 0) for 14 points
+Player1: 26			Player2: 10			
+Player2 plays EATEN at (7, 0) for 16 points
+Player1: 26			Player2: 26			
+Player1 plays PHAT at (8, 6) for 24 points
+Player1: 50			Player2: 26			
+Player2 plays BYSsI at (9, 2) for 13 points
+Player1: 50			Player2: 39			
+Player1 plays MOT at (6, 11) for 10 points
+Player1: 60			Player2: 39			
+Player2 plays AILED at (3, 14) for 27 points
+Player1: 60			Player2: 66			
+Player1 plays HANG at (9, 8) for 21 points
+Player1: 81			Player2: 66			
+Player2 plays BRASI at (5, 9) for 27 points
+Player1: 81			Player2: 93			
+Player1 plays VIRL at (0, 13) for 16 points
+Player1: 97			Player2: 93			
+Player2 plays SIC at (9, 12) for 14 points
+Player1: 97			Player2: 107			
+Player1 plays FET at (12, 11) for 24 points
+Player1: 121			Player2: 107			
+Player2 plays WILE at (9, 14) for 15 points
+Player1: 121			Player2: 122			
+Player1 plays eGO at (10, 0) for 7 points
+Player1: 128			Player2: 122			
+Player2 plays WITAN at (11, 2) for 24 points
+Player1: 128			Player2: 146			
+Player1 plays KOI at (10, 5) for 19 points
+Player1: 147			Player2: 146			
+Player2 plays DURO at (11, 8) for 26 points
+Player1: 147			Player2: 172			
+Player2 plays ZONAE at (4, 6) for 36 points
+Player1: 147			Player2: 208			
+Player1 plays RELET at (13, 7) for 13 points
+Player1: 160			Player2: 208			
+Player2 plays SAY at (12, 6) for 32 points
+Player1: 160			Player2: 240			
+Player1 plays JUPE at (14, 4) for 48 points
+Player1: 208			Player2: 240			
+Player2 plays MI at (3, 7) for 16 points
+Player1: 208			Player2: 256			
+Player2 plays FA at (2, 8) for 19 points
+Player1: 208			Player2: 275			
+Player2 plays Q at (13, 12) for 8 points
+Player1: 208			Player2: 283			
