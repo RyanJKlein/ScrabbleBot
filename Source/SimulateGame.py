@@ -152,7 +152,7 @@ def play_game(player1_bot, player2_bot, dictionary_path=None):
     timestamp = timestamp_raw.strftime('%Y_%m_%d_%H_%M_%S')
     log_name = f"{timestamp}_game_sim.txt"
     sdata_name = f"{timestamp}_game_sim_sdata.txt"
-    game = Game.ScrabbleGame(log_file_name="game_simulation.txt", sdata_name='game_simulation_data.txt',
+    game = Game.ScrabbleGame(log_file_name=log_name, sdata_name=sdata_name,
                              sim_bag=True)
     game.add_player('Player1')
     game.add_player('Player2')
