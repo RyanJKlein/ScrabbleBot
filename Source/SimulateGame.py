@@ -176,7 +176,6 @@ def play_game(player1_bot, player2_bot, dictionary_path=None):
         if '*' in game.get_tiles(player_up):
             print(f'{player_up} has a blank')
         player_up = 'Player1' if player_up == 'Player2' else 'Player2'
-        print("PLAYER_UP_CHANGE")
     # GAME OVER
     print("Game complete!")
 
