@@ -1,0 +1,46 @@
+Player1 plays RNATO at (7, 7) for 12 points
+Player1: 12			Player2: 0			
+Player2 plays PAYeD at (6, 9) for 21 points
+Player1: 12			Player2: 21			
+Player1 plays SLUBS at (5, 5) for 18 points
+Player1: 30			Player2: 21			
+Player2 plays DEBYE at (4, 1) for 24 points
+Player1: 30			Player2: 45			
+Player1 plays TRIPe at (8, 3) for 10 points
+Player1: 40			Player2: 45			
+Player2 plays QUAI at (7, 0) for 37 points
+Player1: 40			Player2: 82			
+Player1 plays ETHIC at (9, 6) for 18 points
+Player1: 58			Player2: 82			
+Player2 plays ONION at (3, 5) for 9 points
+Player1: 58			Player2: 91			
+Player1 plays AXILE at (2, 9) for 26 points
+Player1: 84			Player2: 91			
+Player2 plays THERM at (1, 5) for 29 points
+Player1: 84			Player2: 120			
+Player1 plays FUG at (10, 4) for 20 points
+Player1: 104			Player2: 120			
+Player2 plays ZLOTE at (0, 1) for 17 points
+Player1: 104			Player2: 137			
+Player1 plays LOWE at (11, 1) for 19 points
+Player1: 123			Player2: 137			
+Player2 plays KEA at (1, 11) for 26 points
+Player1: 123			Player2: 163			
+Player1 plays ORCA at (12, 3) for 18 points
+Player1: 141			Player2: 163			
+Player2 plays OI at (1, 2) for 6 points
+Player1: 141			Player2: 169			
+Player1 plays JAG at (2, 0) for 30 points
+Player1: 171			Player2: 169			
+Player2 plays AERIE at (13, 6) for 9 points
+Player1: 171			Player2: 178			
+Player1 plays VERTS at (14, 2) for 12 points
+Player1: 183			Player2: 178			
+Player2 plays FUGS at (10, 11) for 22 points
+Player1: 183			Player2: 200			
+Player1 plays DOME at (5, 0) for 22 points
+Player1: 205			Player2: 200			
+Player2 plays DIN at (8, 11) for 12 points
+Player1: 205			Player2: 212			
+Player2 plays AI at (5, 12) for 10 points
+Player1: 205			Player2: 222			
