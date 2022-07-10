@@ -1,0 +1,46 @@
+Player1 plays AErOF at (7, 7) for 22 points
+Player1: 22			Player2: 0			
+Player2 plays GITE at (6, 10) for 14 points
+Player1: 22			Player2: 14			
+Player1 plays TWAE at (5, 7) for 13 points
+Player1: 35			Player2: 14			
+Player2 plays DHUTI at (4, 3) for 20 points
+Player1: 35			Player2: 34			
+Player1 plays SLING at (6, 14) for 24 points
+Player1: 59			Player2: 34			
+Player2 plays LUNT at (3, 7) for 9 points
+Player1: 59			Player2: 43			
+Player1 plays BETAS at (2, 3) for 12 points
+Player1: 71			Player2: 43			
+Player2 plays JADES at (8, 3) for 16 points
+Player1: 71			Player2: 59			
+Player1 plays PRIME at (9, 7) for 16 points
+Player1: 87			Player2: 59			
+Player2 plays BeRMS at (10, 3) for 22 points
+Player1: 87			Player2: 81			
+Player1 plays NOVEL at (11, 0) for 27 points
+Player1: 114			Player2: 81			
+Player2 plays YOU at (3, 1) for 24 points
+Player1: 114			Player2: 105			
+Player1 plays FRAUD at (8, 12) for 36 points
+Player1: 150			Player2: 105			
+Player2 plays OAKEN at (2, 9) for 22 points
+Player1: 150			Player2: 127			
+Player1 plays LINT at (12, 4) for 7 points
+Player1: 157			Player2: 127			
+Player2 plays OWED at (13, 7) for 12 points
+Player1: 157			Player2: 139			
+Player1 plays PRICE at (14, 3) for 45 points
+Player1: 202			Player2: 139			
+Player2 plays REAR at (14, 9) for 10 points
+Player1: 202			Player2: 149			
+Player1 plays YOGI at (9, 0) for 23 points
+Player1: 225			Player2: 149			
+Player2 plays ICE at (1, 8) for 25 points
+Player1: 225			Player2: 174			
+Player1 plays HOAX at (0, 5) for 51 points
+Player1: 276			Player2: 174			
+Player2 plays ZA at (2, 0) for 16 points
+Player1: 276			Player2: 190			
+Player1 plays ON at (12, 13) for 7 points
+Player1: 283			Player2: 190			
